@@ -12,6 +12,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * @author Roey Schwartz rs7532@bs.amalnet.k12.il
+     * @version 1
+     * @since 1.10.2023
+     * this code will inputs values to create a list of an engineer or invoice series
+     */
     EditText first_organ, differenceMultiplier;
     RadioButton rb_invoice, rb_engineer;
     Button btn;
@@ -30,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * <p>
+     *     the function doesn't get a variable
+     * </>
+     * @return the function will return a list of strings that have the 20 first values of the engineer or invoice series
+     */
     public String[] create_series(){
         String[] arr_series = new String[20];
 
@@ -53,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return arr_series;
     }
+
+    /**
+     * <p>
+     *     the function get a variable of the type View
+     *     the function will start the Show_series activity and transfers the series, the first value of the series and the difference or multiplier of the series
+     * </>
+     */
 
     public void pressed(View view) {
         si = new Intent(MainActivity.this,Show_series.class);

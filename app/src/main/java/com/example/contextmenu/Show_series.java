@@ -14,7 +14,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Show_series extends AppCompatActivity {
-    int loc = 1;
+    /**
+     * @author Roey Schwartz rs7532@bs.amalnet.k12.il
+     * @version 1
+     * @since 1.10.2023
+     * this code will inputs values to create a list of an engineer or invoice series
+     */
     Intent gi;
     TextView tv;
     ListView lv;
@@ -48,6 +53,12 @@ public class Show_series extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param position is the position of the value in the list
+     * @return the sum of the values from the start of the series to the selected item
+     */
+
     public int sum(int position){
         int sum = 0;
         for (int i = 0; i < position; i++){
@@ -56,6 +67,17 @@ public class Show_series extends AppCompatActivity {
         return sum;
     }
 
+    /**
+     *
+     * @param menu The context menu that is being built
+     * @param v The view for which the context menu is being built
+     * @param menuInfo Extra information about the item for which the
+     *            context menu should be shown. This information will vary
+     *            depending on the class of v.
+     * <p>
+     *      the function creates the context menu in the code
+     * </p>
+     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         menu.setHeaderTitle("Choose an Option");
@@ -64,7 +86,14 @@ public class Show_series extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
-
+    /**
+     *
+     * @param item The context menu item that was selected.
+     * <p>
+     *      the function is shows the location of the selected item in the list,
+     *      or the sum from the start of the list to the selected item.
+     * </p>
+     */
     @SuppressLint("SetTextI18n")
     @Override
     public boolean onContextItemSelected(MenuItem item) {
