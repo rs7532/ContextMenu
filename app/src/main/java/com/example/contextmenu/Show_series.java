@@ -18,7 +18,7 @@ public class Show_series extends AppCompatActivity {
      * @author Roey Schwartz rs7532@bs.amalnet.k12.il
      * @version 1
      * @since 1.10.2023
-     * this code will inputs values to create a list of an engineer or invoice series
+     * this code will show the first 20 values of the series in accordance of the user choices
      */
     Intent gi;
     TextView tv;
