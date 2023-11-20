@@ -1,10 +1,13 @@
 package com.example.contextmenu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,4 +86,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(si);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        String st = item.getTitle().toString();
+        if(st.equals("move screen")){
+            Intent si = new Intent(this, credits.class);
+            startActivity(si);
+        }
+        else{
+            closeOptionsMenu();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
